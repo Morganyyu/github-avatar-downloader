@@ -23,13 +23,13 @@ function getRepoContributors(repoOwner, repoName, cb) {
 getRepoContributors(args[0], args[1], function(err, result) {
   var err = "Not enough arguments."
   if (args.length < 2) {
-  console.log("Error:", err);
-  return;
+    console.log("Error:", err);
+    return;
   } else {
     result.forEach(function(id) {
-    var path = './avatars/'+id.login+".jpg";
-    downloadImageByURL(id.avatar_url, path);
-  })
+      var path = './avatars/'+id.login+".jpg";         //looping through the id's to get the login names
+      downloadImageByURL(id.avatar_url, path);         //to reference to the downloadImageByURL function
+    })
   }
 });
 
